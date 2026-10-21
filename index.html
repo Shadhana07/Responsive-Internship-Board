@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Internship Board</h1>
+            <p>Find your next internship opportunity.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section aria-labelledby="listings-title">
+            <h2 id="listings-title">Available Internships</h2>
+            <div class="filters">
+    <div class="form-group">
+        <label for="search-input">Search internships</label>
+        <input
+            type="search"
+            id="search-input"
+            placeholder="Search by title or skill..."
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="domain-filter">Filter by domain</label>
+        <select id="domain-filter">
+            <option value="">All domains</option>
+            <option value="Full Stack Development">Full Stack Development</option>
+            <option value="UI/UX">UI/UX</option>
+            <option value="Data Analytics">Data Analytics</option>
+            <option value="Cyber Security">Cyber Security</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="mode-filter">Filter by work mode</label>
+        <select id="mode-filter">
+            <option value="">All work modes</option>
+            <option value="Remote">Remote</option>
+            <option value="Hybrid">Hybrid</option>
+            <option value="On-site">On-site</option>
+        </select>
+    </div>
+</div>
+            <p>Explore opportunities and find a role that matches your skills.</p>
+
+            <div id="internship-list" aria-live="polite">
+                <p>Internship listings will appear here.</p>
+            </div>
+            <div id="error-message" role="alert" hidden>
+    <p>Sorry, we couldn't load internships.</p>
+    <button type="button" id="retry-button">Retry</button>
+</div>
+        </section>
+        <section class="application-section" aria-labelledby="application-title">
+    <h2 id="application-title">Apply for an Internship</h2>
+    <p>Complete the form to submit your application.</p>
+
+    <form id="application-form">
+        <div class="form-group">
+            <label for="applicant-name">Full name</label>
+            <input
+                type="text"
+                id="applicant-name"
+                name="name"
+                autocomplete="name"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="applicant-email">Email address</label>
+            <input
+                type="email"
+                id="applicant-email"
+                name="email"
+                autocomplete="email"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="application-internship">Choose an internship</label>
+            <select id="application-internship" name="internshipId" required>
+                <option value="">Select an internship</option>
+                <option value="INT-101">Frontend Intern</option>
+                <option value="INT-102">API Engineering Intern</option>
+                <option value="INT-103">UI/UX Intern</option>
+                <option value="INT-104">Data Analyst Intern</option>
+                <option value="INT-105">Security Operations Intern</option>
+            </select>
+        </div>
+
+        <button type="submit">Submit Application</button>
+        <p id="application-message" role="status" aria-live="polite"></p>
+    </form>
+</section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
